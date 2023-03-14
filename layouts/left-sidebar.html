@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .bg-left-sidebar {
+            @apply w-full h-screen bg-[#000] opacity-[0.8] p-[2px] overflow-hidden;
+        }
+        .left-sidebar {
+            @apply fixed w-[238px] h-full bg-white overflow-hidden text-[#363636];
+        }
+        .item-menu {
+            @apply flex h-[50px] items-center px-4 border-b-[1px] border-b-[#DBDBDB];
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-left-sidebar">
+        <div class="left-sidebar">
+            <ul>
+                <li class="item-menu">
+                    <img src="../images/profile-left-menu.png" alt="profile" />
+                    <span class="ml-3 text-[14px]">Profile</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/edit-left-menu.png" alt="edit" />
+                    <span class="ml-3 text-[14px]">Chỉnh sửa cá nhân</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/KYC-left-menu.png" alt="KYC" />
+                    <span class="ml-3 text-[14px]">KYC</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/add-channel-lefft-menu.png" alt="channel" />
+                    <span class="ml-3 text-[14px]">Thêm channel</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/domain-left-menu.png" alt="domain" />
+                    <span class="ml-3 text-[14px]">Thay đổi Domain</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/imac-left-menu.png" alt="imac" />
+                    <span class="ml-3 text-[14px]">Đổi giao diện</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/hot-deal-left-menu.png" alt="hot-deal" />
+                    <span class="ml-3 text-[14px]">Hot Deal</span>
+                </li>
+                <li class="item-menu">
+                    <img src="../images/report-left-menu.png" alt="report" />
+                    <span class="ml-3 text-[14px]">Báo cáo</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
