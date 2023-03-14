@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .my-account {
+            @apply w-full overflow-hidden p-4;
+        }
+        .my-account-title {
+            @apply text-[18px] font-[600];
+        }
+        .my-account-content {
+            @apply grid  md:grid-cols-3 grid-cols-2 gap-4 w-full mt-[30px];
+        }
+        .content-top {
+            background: rgba(239, 239, 239, 0.6);
+            @apply w-full md:h-[114px] md:rounded-[17px] rounded-[10px] md:px-5 px-3 py-2 md:col-span-1 col-span-2
+        }
+        .content-bottom {
+            @apply w-full h-[40px] rounded-[5px];
+        }
+        .content-money {
+            @apply flex md:mt-3 md:justify-end justify-between;
+        }
+        .number-money {
+            @apply text-[#9E1432] text-[24px] font-[500] mr-1;
+        }
+        .currency {
+            @apply text-[20px] font-[400] text-[#9E1432] mt-1;
+        }
+        .select-input {
+            @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+        }
+        .table-list {
+            @apply w-full text-[16px] font-[500] text-left text-[#363636];
+        }
+        .table-thead {
+            @apply text-[16px] text-[#363636] uppercase bg-[#ECECEC] dark:text-gray-400;
+        }
+        .table-font-500 {
+            @apply px-6 py-3 font-[500];
+        }
+        .table-font-normal {
+            @apply px-6 py-3 font-normal;
+        }
+        .block-item-data {
+            @apply border border-[#CBCBCB] rounded-md w-full grid grid-cols-2 p-4 text-[#363636] mb-3    ;
+        }
+        .icon-select {
+            background: url("/images/icon_dropdown.svg") no-repeat;
+            background-position: calc(100% - 0.75rem) center !important;
+            -moz-appearance: none !important;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            padding-right: 2rem !important;
+        }
+        @media screen and (max-width: 600px){
+            .tablet {
+                display: none;
+            }
+            .mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 601px){
+            .tablet {
+                display: block;
+            }
+            .mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="my-account">
+       <h1 class="my-account-title">My account</h1>
+        <div class="my-account-content">
+            <div class="content-top">
+                <span class="text-[18px]">Available</span>
+                <p class="content-money">
+                    <span class="number-money">1,000,520,000 </span><span class="currency">vnd</span>
+                </p>
+            </div>
+            <div class="content-top">
+                <span class="text-[18px]">Pending</span>
+                <p class="content-money">
+                    <span class="number-money">0 </span><span class="currency">vnd</span>
+                </p>
+            </div>
+            <div class="content-top">
+                <span class="text-[18px]">Withdraw</span>
+                <p class="content-money">
+                    <span class="number-money">0 </span><span class="currency">vnd</span>
+                </p>
+            </div>
+            <div class="content-bottom bg-[#FB2D5A] col-span-1">
+                <div class="flex justify-center items-center h-full">
+                    <img src="../images/input-money.png" alt="input money"/>
+                    <span class="text-white font-[500] text-[14px] ml-4">NẠP TIỀN</span>
+                </div>
+            </div>
+            <div class="content-bottom bg-[#6B097B] col-span-1 ">
+                <div class="flex justify-center items-center h-full">
+                    <img src="../images/output-money.png" alt="input money"/>
+                    <span class="text-white font-[500] text-[14px] ml-4">NẠP TIỀN</span>
+                </div>
+            </div>
+            <div class="content-bottom relative col-span-2">
+                <select class="select-input icon-select">
+                    <option selected>Di chuyển tới</option>
+                    <option value="1">Lịch sử nạp rút</option>
+                    <option value="2">Ví của tôi</option>
+                </select>
+            </div>
+        </div>
+        <div class="w-full mt-[30px] tablet">
+            <div class="relative overflow-x-auto">
+                <table class="table-list">
+                    <thead class="table-thead">
+                    <tr>
+                        <th scope="col" class="table-font-500">
+                           #
+                        </th>
+                        <th scope="col" class="table-font-500">
+                           Ngày tạo
+                        </th>
+                        <th scope="col" class="table-font-500">
+                            Available (vnđ)
+                        </th>
+                        <th scope="col" class="table-font-500">
+                            Pending (vnđ)
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bg-white border-b text-[#363636]">
+                        <td class="table-font-normal">
+                            EYUtgCq5Yw
+                        </td>
+                        <td class="table-font-normal">
+                            2022-08-09 07:04:34
+                        </td>
+                        <td class="table-font-500">
+                           10,000
+                        </td>
+                        <td class="table-font-normal">
+                            0
+                        </td>
+                    </tr>
+                    <tr class="bg-white border-b text-[#363636]">
+                        <td class="table-font-normal">
+                            EYUtgCq5Yw
+                        </td>
+                        <td class="table-font-normal">
+                            2022-08-09 07:04:34
+                        </td>
+                        <td class="table-font-500">
+                            1,000,000,000
+                        </td>
+                        <td class="table-font-normal">
+                            0
+                        </td>
+                    </tr>
+                    <tr class="bg-white border-b text-[#363636]">
+                        <td class="table-font-normal">
+                            EYUtgCq5Yw
+                        </td>
+                        <td class="table-font-normal">
+                            2022-08-09 07:04:34
+                        </td>
+                        <td class="table-font-500">
+                            10,000
+                        </td>
+                        <td class="table-font-normal">
+                            0
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="w-full mt-[30px] mobile">
+            <div class="block-item-data">
+                <div class="col-span-2">
+                    <span class="font-medium text-[16px]">#</span>
+                    <span class="font-normal text-[14px]">EYUtgCq5Yw</span>
+                </div>
+                <span class="font-medium text-[16px] py-1">Ngày tạo</span>
+                <span class="font-normal text-[14px] py-1">2022-08-09 07:04:34</span>
+                <span class="font-medium text-[16px] py-1">Available (vnđ)</span>
+                <span class="font-medium text-[14px] py-1">40,000</span>
+                <span class="font-medium text-[16px] py-1">Pending (vnđ)</span>
+                <span class="font-medium text-[14px] py-1">0</span>
+            </div>
+            <div class="block-item-data">
+                <div class="col-span-2">
+                    <span class="font-medium text-[16px]">#</span>
+                    <span class="font-normal text-[14px]">EYUtgCq5Yw</span>
+                </div>
+                <span class="font-medium text-[16px] py-1">Ngày tạo</span>
+                <span class="font-normal text-[14px] py-1">2022-08-09 07:04:34</span>
+                <span class="font-medium text-[16px] py-1">Available (vnđ)</span>
+                <span class="font-medium text-[14px] py-1">40,000</span>
+                <span class="font-medium text-[16px] py-1">Pending (vnđ)</span>
+                <span class="font-medium text-[14px] py-1">0</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
