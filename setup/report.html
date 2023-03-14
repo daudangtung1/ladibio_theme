@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .setup-content {
+        @apply h-auto mx-4 my-3 text-[#363636] overflow-hidden;
+    }
+
+    @layer base {
+    html {
+    font-family: 'Inter', sans-serif;
+}
+}
+
+.setup-content .title {
+@apply font-bold text-[18px];
+}
+.bg-light-green {background-color: rgba(181, 228, 202, 0.6);}
+.bg-light-violet {background-color: rgba(202, 189, 255, 0.6);}
+.bg-light-pink {background-color: rgba(255, 186, 201, 0.6);}
+.bg-light-gray {background-color: rgba(255, 255, 255, 0.4);}
+
+.text-light-green{color: #234934;}
+.text-light-violet{color: #291F4F;}
+.text-light-pink{color: #9E1432;}
+
+.traffic_percent{font-size: 36px; line-height: 48px;}
+
+/*background*/
+.profile_view{@apply bg-[#FFDFB9] }
+.cover_click{@apply bg-[#BDDFFF]}
+.story_click{@apply bg-[#D1FFBB]}
+.my_choice{@apply bg-[#F4F5AD]}
+
+/*font-size*/
+.text-18px{
+@apply text-[18px];
+}
+
+.text-28px{
+@apply text-[28px];
+}
+
+.bg-wrapper{
+@apply bg-[#EDEDED] min-h-[100vh];
+}
+
+.bg-content{
+@apply bg-white min-h-[100vh];
+}
+
+/*color*/
+.text-dark-gray{
+@apply text-[#6F767E];
+}
+
+/*border color*/
+.p-4.border-l, .p-4.border-r{
+@apply border-l-[#CBCBCB];
+}
+
+.px-4.border-l.relative::after {
+@apply absolute bg-[#CBCBCB] -top-4 left-1/2 w-[52%] content-[''] h-px translate-x-[-50%];
+}
+
+.report__filter {
+    @apply absolute top-0 right-0 flex;
+}
+
+.report__filter label{
+    @apply text-[#363636];
+}
+
+.report__filter select {
+    @apply border-[#CBCBCB];
+}
+
+</style>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <div class="p-4 mx-auto bg-content" style="max-width: 900px;">
+            <div class="mb-8 relative">
+                <div>
+                    <h1 class="title font-semibold">Báo Cáo</h1>
+                </div>
+                <div class="report__filter gap-2">
+                    <div class="flex justify-between items-center gap-2 ">
+                        <label for="traffic" class="font-normal text-sm">Loại báo cáo</label>
+                        <select id="traffic" name="" class="font-normal text-sm border rounded-md py-2 px-4 focus:outline-none relative">
+                            <option value="">Hôm nay</option>
+                            <option value="">Hôm qua</option>
+                            <option value="">7 ngày trước</option>
+                            <option value="">30 ngày trước</option>
+                            <option value="">Tháng này</option>
+                            <option value="">Quý này</option>
+                            <option value="">Tùy chọn</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-between items-center gap-2">
+                        <label for="time" class="font-normal text-sm">Theo thời gian</label>
+                        <select id="time" name="" class="font-normal text-sm border rounded-md py-2 px-4 focus:outline-none relative">
+                            <option value="">Hôm nay</option>
+                            <option value="">Hôm qua</option>
+                            <option value="">7 ngày trước</option>
+                            <option value="">30 ngày trước</option>
+                            <option value="">Tháng này</option>
+                            <option value="">Quý này</option>
+                            <option value="">Tùy chọn</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-5 mb-12">
+                <div class="rounded-2xl px-4 py-3 bg-light-green">
+                    <div class="flex justify-start items-center gap-5">
+                        <div class="bg-light-gray w-16 h-16 p-3 rounded-full">
+                            <img src="../images/svg/crv.svg" alt="">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-medium mb-3.5 traffic_percent text-light-green">88%</span>
+                            <span class="uppercase text-18px text-dark-gray">crv</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl px-4 py-3 bg-light-violet">
+                    <div class="flex justify-start items-center gap-5">
+                        <div class="bg-light-gray w-16 h-16 p-3 rounded-full">
+                            <img src="../images/svg/epc.svg" alt="">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-medium mb-3.5 traffic_percent text-light-green">89%</span>
+                            <span class="uppercase text-18px text-dark-gray">epc</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl px-4 py-3 bg-light-pink">
+                    <div class="flex justify-start items-center gap-5">
+                        <div class="bg-light-gray w-16 h-16 p-3 rounded-full">
+                            <img src="../images/svg/refs.svg" alt="">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-medium mb-3.5 traffic_percent text-light-green">88%</span>
+                            <span class="uppercase text-18px text-dark-gray">refs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row grid grid-cols-4 gap-0 pb-4">
+                <div class="px-4 p-2.5 border-l">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full profile_view">
+                            <img src="../images/svg/profile_view.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Profile View</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full flex justify-center items-center cover_click">
+                            <img src="../images/svg/cover_click.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Cover Click</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full flex justify-center items-center story_click">
+                            <img src="../images/svg/story_click.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Story Click</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l border-r">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full flex justify-center items-center my_choice">
+                            <img src="../images/svg/my_choice.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">My Choice</span>
+                </div>
+            </div>
+
+            <div class="row grid grid-cols-4 gap-0 pt-4">
+                <div class="px-4 p-2.5 border-l relative">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full my_review">
+                            <img src="../images/svg/my_review.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">My Review</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l relative">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full hot_trend">
+                            <img src="../images/svg/hot_trend.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Hot Trend</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l relative">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full donate">
+                            <img src="../images/svg/donate.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Donate</span>
+                </div>
+
+                <div class="px-4 p-2.5 border-l border-r relative">
+                    <div class="flex justify-start items-center pb-3.5">
+                        <div class="p-2.5 w-12 h-12 rounded-full gift">
+                            <img src="../images/svg/gift.svg" alt="">
+                        </div>
+                        <span class="ml-3.5 font-medium text-28px">123,456</span>
+                    </div>
+                    <span class="text-dark-gray text-base">Quà tặng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
