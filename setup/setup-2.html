@@ -26,14 +26,13 @@
         .text-bot-input {
             @apply text-[#91699C] text-[12px] mt-1 leading-[15px];
         }
-        .box__dragndrop,
         .box__file
          {
             display: none;
         }
         .box-upload {
             box-sizing: border-box;
-            @apply mt-2 w-[268px] h-[128px] text-center transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none;
+            @apply mt-2 md:w-[268px] w-full h-[128px] text-center transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none;
         }
     </style>
 </head>
@@ -44,23 +43,23 @@
             Nhận ủng hộ số tiền cố định
         </p>
         <div class="w-full mt-[30px]">
-            <form class="grid grid-cols-2 gap-8">
-                <div>
+            <form class="grid grid-cols-2 md:gap-8">
+                <div class="md:col-span-1 col-span-2">
                     <label class="flex">Lời kêu gọi Fan ủng hộ: <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
                     <input type="text" class="w-full input-setup" placeholder="Ủng hộ tôi">
                     <p class="text-bot-input">Tối đa 60 kí tự.</p>
                 </div>
-                <div>
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
                     <label class="flex">Số tiền nhận tối thiểu (vnđ): <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
                     <input type="text" class="w-full input-setup" placeholder="1,000,000">
                     <p class="text-bot-input">Số tiền nhận tối thiểu không được dưới 2,000 vnđ và không được cao hơn 9,999,999,999 vnđ.</p>
                 </div>
-                <div class="col-span-2">
+                <div class="col-span-2 md:mt-0 mt-4">
                     <label class="flex">Lời cảm ơn tới Fan: <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
                     <textarea placeholder="Nhập lời cảm ơn" class="input-setup-textarea" maxlength="300"></textarea>
                     <p class="text-bot-input">Tối đa 300 ký tự.</p>
                 </div>
-                <div>
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
                     <label class="flex font-bold">Ảnh nền: <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
                     <div class="box-upload">
                         <form class="box" method="post" action="" enctype="multipart/form-data">
