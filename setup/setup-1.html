@@ -13,7 +13,7 @@
         @tailwind utilities;
 
         .setup-content {
-            @apply h-auto mx-4 my-3 text-[#363636] overflow-hidden;
+            @apply h-auto p-4 my-3 text-[#363636] overflow-hidden;
         }
 
         .setup-content .title {
@@ -48,88 +48,106 @@
             background: linear-gradient(180deg, #FB4F75 0.01%, #FB2D5A 86.99%, #F11444 99.99%);
         }
         .btn-edit-setting {
-            @apply font-normal text-[#FB2D5A] border-[1px] border-solid border-[#FB2D5A] rounded px-6 text-[12px] py-[3px] ml-2;
+            @apply font-normal text-[#FB2D5A] border-[1px] border-solid border-[#FB2D5A] rounded px-6 text-[12px] py-[3px] md:ml-2;
+        }
+        @media screen and (max-width: 600px){
+            .tablet {
+                display: none;
+            }
+            .mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 601px){
+            .tablet {
+                display: block;
+            }
+            .mobile {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="setup-content">
-        <p class="title">Setup</p>
-        <div class="grid grid-cols-5 w-full mt-5">
-            <div class="col-span-4">
-                <p class="font-bold text-[14px]">Nhận quà tặng</p>
-                <p class="text-[14px] italic font-thin py-2">
-                    👉🏻 Bật tính năng này, bạn sẽ cho phép khách gửi tặng quà đến bạn với các giá trị khác nhau. Bạn có thể quy đổi các phần quà thành tiền mặt. Bật tính năng ngay nhé!
-                </p>
-            </div>
-            <div class="col-span-1 flex justify-end">
-                <div class="w-[50px]">
-                    <div class="toggle colour">
-                        <input id="check1" class="toggle-checkbox hidden" type="checkbox">
-                        <label for="check1" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
-                    </div>
-                </div>
-            </div>
+<div class="setup-content">
+    <p class="title">Setup</p>
+    <div class="grid grid-cols-5 w-full mt-5">
+        <div class="col-span-4">
+            <p class="font-bold text-[14px]">Nhận quà tặng</p>
+            <p class="text-[14px] italic font-thin py-2">
+                👉🏻 Bật tính năng này, bạn sẽ cho phép khách gửi tặng quà đến bạn với các giá trị khác nhau. Bạn có thể quy đổi các phần quà thành tiền mặt. Bật tính năng ngay nhé!
+            </p>
         </div>
-        <hr class="mt-5">
-        <div class="grid grid-cols-5 w-full mt-5">
-            <div class="col-span-4">
-                <p class="font-bold text-[14px]">
-                    Nhận ủng hộ số tiền cố định
-                    <button class="btn-edit-setting">Chỉnh sửa</button>
-                </p>
-                <p class="text-[14px] italic font-thin py-2">
-                    Bật tính năng này, bạn sẽ cho phép mọi khách hàng gửi tặng một số tiền giống nhau đến bạn. Thử tính năng thú vị này nhé!
-                </p>
-            </div>
-            <div class="col-span-1 flex justify-end">
-                <div class="w-[50px]">
-                    <div class="toggle colour">
-                        <input id="check2" class="toggle-checkbox hidden" type="checkbox">
-                        <label for="check2" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="mt-5">
-        <div class="grid grid-cols-5 w-full mt-5">
-            <div class="col-span-4">
-                <p class="font-bold text-[14px]">
-                    Cài đặt Accesstrade
-                    <button class="btn-edit-setting">Cài đặt</button>
-                </p>
-                <p class="text-[14px] italic font-thin py-2">
-                    Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây)
-                </p>
-            </div>
-            <div class="col-span-1 flex justify-end">
-                <div class="w-[50px]">
-                    <div class="toggle colour">
-                        <input id="check3" class="toggle-checkbox hidden" type="checkbox">
-                        <label for="check3" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="mt-5">
-        <div class="grid grid-cols-5 w-full mt-5">
-            <div class="col-span-4">
-                <p class="font-bold text-[14px]">
-                    Cài đặt Hot Deal
-                </p>
-                <p class="text-[14px] italic font-thin py-2">
-                    Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đâ
-                </p>
-            </div>
-            <div class="col-span-1 flex justify-end">
-                <div class="w-[50px]">
-                    <div class="toggle colour">
-                        <input id="check4" class="toggle-checkbox hidden" type="checkbox">
-                        <label for="check4" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
-                    </div>
+        <div class="col-span-1 flex justify-end">
+            <div class="w-[50px]">
+                <div class="toggle colour">
+                    <input id="check1" class="toggle-checkbox hidden" type="checkbox">
+                    <label for="check1" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
                 </div>
             </div>
         </div>
     </div>
+    <hr class="mt-5">
+    <div class="grid grid-cols-5 w-full mt-5">
+        <div class="col-span-4">
+            <p class="font-bold text-[14px] flex">
+                Nhận ủng hộ số tiền cố định
+                <button class="btn-edit-setting tablet">Chỉnh sửa</button>
+            </p>
+            <p class="text-[14px] italic font-thin py-2">
+                Bật tính năng này, bạn sẽ cho phép mọi khách hàng gửi tặng một số tiền giống nhau đến bạn. Thử tính năng thú vị này nhé!
+            </p>
+            <button class="btn-edit-setting mobile">Chỉnh sửa</button>
+        </div>
+        <div class="col-span-1 flex justify-end">
+            <div class="w-[50px]">
+                <div class="toggle colour">
+                    <input id="check2" class="toggle-checkbox hidden" type="checkbox">
+                    <label for="check2" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-5">
+    <div class="grid grid-cols-5 w-full mt-5">
+        <div class="col-span-4">
+            <p class="font-bold text-[14px] flex">
+                Cài đặt Accesstrade
+                <button class="btn-edit-setting tablet">Cài đặt</button>
+            </p>
+            <p class="text-[14px] italic font-thin py-2">
+                Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây)
+            </p>
+            <button class="btn-edit-setting mobile">Cài đặt</button>
+        </div>
+        <div class="col-span-1 flex justify-end">
+            <div class="w-[50px]">
+                <div class="toggle colour">
+                    <input id="check3" class="toggle-checkbox hidden" type="checkbox">
+                    <label for="check3" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-5">
+    <div class="grid grid-cols-5 w-full mt-5">
+        <div class="col-span-4">
+            <p class="font-bold text-[14px]">
+                Cài đặt Hot Deal
+            </p>
+            <p class="text-[14px] italic font-thin py-2">
+                Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đây) Text giới thiệu hoặc hướng dẫn AccessTrade (Note tạm đâ
+            </p>
+        </div>
+        <div class="col-span-1 flex justify-end">
+            <div class="w-[50px]">
+                <div class="toggle colour">
+                    <input id="check4" class="toggle-checkbox hidden" type="checkbox">
+                    <label for="check4" class="toggle-label block w-[2.5] h-5 rounded-full transition-color duration-150 ease-out"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

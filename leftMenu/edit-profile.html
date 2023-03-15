@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chỉnh sửa cá nhân</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .edit-profile {
+            @apply w-full overflow-hidden p-4;
+        }
+        .edit-profile-title {
+            @apply text-[18px] font-[600];
+        }
+        .input-edit {
+            @apply border-[1px] border-solid border-[#CBCBCB] h-[40px] rounded mt-2 px-3 placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+        .input-edit-textarea {
+            @apply w-full border-[1px] border-solid border-[#CBCBCB] px-3 py-2 h-[100px] rounded mt-2  placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+    </style>
+</head>
+<body>
+<div class="edit-profile">
+    <h1 class="edit-profile-title">Chỉnh sửa cá nhân</h1>
+    <div class="w-full mt-[30px]">
+        <form class="grid grid-cols-2 md:gap-8">
+            <div class="md:col-span-1 col-span-2">
+                <label class="flex">Họ tên: <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
+                <input type="text" class="w-full input-edit" placeholder="Họ và tên">
+            </div>
+            <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                <label class="flex">Tiêu đề thông tin: </label>
+                <input type="text" class="w-full input-edit" placeholder="Cung cấp các link đồ dùng tốt nhất">
+            </div>
+            <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                <label class="flex">Mô tả: </label>
+                <input type="text" class="w-full input-edit" placeholder="Đường link đến sản phẩm trên sàn thương mại điện tử Shopee">
+            </div>
+            <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                <label class="flex">Link Ref: </label>
+                <div class="flex">
+                    <input type="text" class="w-full input-edit bg-[#ECECEC] mr-1" placeholder="https://account.kol.bio/register?ref=abczxc" disabled>
+                    <button class="rounded w-[40px] h-[40px] border border-[#CBCBCB] mt-2">
+                        <img class="mx-auto" src="../images/icon-copy.png" alt="copy"/>
+                    </button>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                <div class="grid grid-cols-2 md:gap-8 gap-3">
+                    <div class="col-span-1">
+                        <label class="flex">Số tài khoản: </label>
+                        <input type="text" class="w-full input-edit" placeholder="Số tài khoản">
+                    </div>
+                    <div class="col-span-1">
+                        <label class="flex">Ngân hàng: </label>
+                        <input type="text" class="w-full input-edit" placeholder="Ngân hàng">
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                <label class="flex">Chi nhánh: </label>
+                <input type="text" class="w-full input-edit" placeholder="Chi nhánh">
+            </div>
+            <div class="col-span-2 md:mt-0 mt-4">
+                <label class="flex">Lời giới thiệu booking: </label>
+                <textarea placeholder="Bạn muốn booking xin hãy liên hệ Tôi" class="input-edit-textarea" maxlength="300"></textarea>
+            </div>
+            <div class="flex justify-center mt-[50px] col-span-2">
+                <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+                    LƯU THAY ĐỔI
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

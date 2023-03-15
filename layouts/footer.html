@@ -12,12 +12,12 @@
         @tailwind components;
         @tailwind utilities;
         .footer {
-            @apply h-[100px] text-white font-normal w-full max-w-[900px] mx-auto overflow-hidden;
+            @apply h-[100px] text-white font-normal w-full overflow-hidden mx-auto max-w-[900px];
         }
         .content-footer {
             background: linear-gradient(180deg, #FF3A65 0%, #C30B33 100%);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-            @apply grid grid-cols-5 gap-4 mx-auto h-[68px] bottom-0 fixed w-full max-w-[900px];
+            @apply grid grid-cols-5 gap-4 mx-auto md:h-[68px] h-[56px] bottom-0 fixed w-full max-w-[900px];
         }
         .profile-icon {
             @apply h-[85px] mx-auto -mt-[45px];
@@ -30,7 +30,7 @@
                 @apply gap-0;
             }
             .profile-icon {
-                @apply h-[60px] mx-auto -mt-[25px];
+                @apply h-[60px] mx-auto -mt-[32px];
             }
             .icon-mobile {
                 @apply w-[20px] h-[20px];
@@ -39,29 +39,29 @@
     </style>
 </head>
 <body>
-    <div class="footer">
-        <div class="content-footer">
-            <div class="text-center">
-                <img src="../images/accout-footer.png" alt="accout" class="mx-auto mt-3 icon-mobile">
-                <span class="text-[12px]">MY ACCOUT</span>
-            </div>
-            <div class="text-center actived">
-                <img src="../images/setup-footer-pink.png" alt="setting" class="mx-auto mt-3 icon-mobile">
-                <span class="text-[12px]">SETUP</span>
-            </div>
-            <div class="text-center relative">
-                <img src="../images/profile-footer.png" alt="profile" class="profile-icon">
-                <span class="text-[12px]">PROFILE</span>
-            </div>
-            <div class="text-center">
-                <img src="../images/report-footer.png" alt="report" class="mx-auto mt-3 icon-mobile">
-                <span class="text-[12px]">BÁO CÁO</span>
-            </div>
-            <div class="text-center">
-                <img src="../images/hot-trend-footer.png" alt="hot-trend" class="mx-auto mt-3 icon-mobile">
-                <span class="text-[12px]">HOT TREND</span>
-            </div>
+<div class="footer">
+    <div class="content-footer">
+        <div class="text-center">
+            <img src="../images/accout-footer.png" alt="accout" class="mx-auto md:mt-3 mt-2 icon-mobile">
+            <span class="text-[12px]">MY ACCOUT</span>
+        </div>
+        <div class="text-center actived">
+            <img src="../images/setup-footer-pink.png" alt="setting" class="mx-auto md:mt-3 mt-2 icon-mobile">
+            <span class="text-[12px]">SETUP</span>
+        </div>
+        <div class="text-center relative">
+            <img src="../images/profile-footer.png" alt="profile" class="profile-icon">
+            <span class="text-[12px]">PROFILE</span>
+        </div>
+        <div class="text-center">
+            <img src="../images/report-footer.png" alt="report" class="mx-auto md:mt-3 mt-2 icon-mobile">
+            <span class="text-[12px]">BÁO CÁO</span>
+        </div>
+        <div class="text-center">
+            <img src="../images/hot-trend-footer.png" alt="hot-trend" class="mx-auto md:mt-3 mt-2 icon-mobile">
+            <span class="text-[12px]">HOT TREND</span>
         </div>
     </div>
+</div>
 </body>
 </html>

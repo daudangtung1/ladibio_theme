@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm Channel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .channel {
+            @apply w-full overflow-hidden p-4;
+        }
+        .channel-title {
+            @apply text-[18px] font-[600];
+        }
+        .block-title-child {
+            @apply w-full border-b mt-[30px];
+        }
+        .block-title-child h2 {
+            @apply text-center py-1 bg-[#ECECEC] max-w-[162px] text-[16px] text-[#363636] font-medium;
+        }
+        .input-channel {
+            @apply border-[1px] border-solid border-[#CBCBCB] h-[40px] rounded mt-2 px-3 placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+        .select-input {
+            @apply mt-2 bg-gray-50 h-[40px] border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+        }
+        .icon-select {
+            background: url("/images/icon_dropdown.svg") no-repeat;
+            background-position: calc(100% - 0.75rem) center !important;
+            -moz-appearance: none !important;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            padding-right: 2rem !important;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            color: rgba(0, 0, 0, 0);
+            opacity: 1;
+            display: block;
+            background: url("/images/fontisto_date.png") no-repeat;
+            border-width: thin;
+            margin-top: 4px;
+        }
+        .image-dot-star {
+            @apply w-[10px] h-[9px] ml-2 mt-2;
+        }
+        .col-input-channel {
+            @apply md:col-span-1 col-span-2 md:mt-0 mt-4;
+        }
+        .input-channel-textarea {
+            @apply w-full border-[1px] border-solid border-[#CBCBCB] px-3 py-2 h-[100px] rounded mt-2  placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+    </style>
+</head>
+<body>
+<div class="channel">
+    <h1 class="channel-title">Thêm Channel</h1>
+<!--    thông tin cá nhân-->
+    <div class="block-title-child">
+        <h2>Thông tin cá nhân</h2>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-8 mt-8">
+        <div class="col-input-channel">
+            <label class="flex">Channel name: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <input type="text" class="w-full input-channel" placeholder="Nhập channel name">
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Gender: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <select class="select-input icon-select">
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+            </select>
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Ngày sinh: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <input type="date" class="w-full input-channel icon-date" placeholder="Chọn ngày sinh">
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Job: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <select class="select-input icon-select">
+                <option value="1">youtuber</option>
+                <option value="2">tiktoker</option>
+                <option value="2">developer</option>
+            </select>
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Tình trạng hôn nhân: </label>
+            <select class="select-input icon-select">
+                <option value="1">Độc thân</option>
+                <option value="2">Đã kết hôn</option>
+                <option value="2">Khác</option>
+            </select>
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Địa chỉ: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <input type="text" class="w-full input-channel" placeholder="Nhập địa chỉ">
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Tỉnh/Thành phố: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <select class="select-input icon-select">
+                <option value="1">Hà Nội</option>
+                <option value="2">Hồ Chí Minh</option>
+                <option value="2">Khác</option>
+            </select>
+        </div>
+        <div class="col-input-channel">
+            <label class="flex">Industry: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+            <select class="select-input icon-select">
+                <option value="1">a</option>
+                <option value="2">b</option>
+                <option value="2">Khác</option>
+            </select>
+        </div>
+        <div class="col-span-2 md:mt-0 mt-4">
+            <label class="flex">Profile Description: </label>
+            <textarea placeholder="Nhập profile description" class="input-channel-textarea" maxlength="300"></textarea>
+        </div>
+    </div>
+    <!--        Social Channels-->
+    <div class="block-title-child">
+        <h2>Thông tin cá nhân</h2>
+    </div>
+    <span class="text-[#91699C] italic text-sm">Vui lòng nhập ít nhất 1 channel</span>
+    <div class="grid grid-cols-2 mt-[30px]">
+
+    </div>
+</div>
+</body>
+</html>

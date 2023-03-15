@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KYC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .kyc {
+            @apply w-full overflow-hidden p-4;
+        }
+        .kyc-title {
+            @apply text-[18px] font-[600];
+        }
+        .box-upload {
+            box-sizing: border-box;
+            @apply mt-2 md:w-[268px] w-full text-center transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none;
+        }
+        .box__file
+        {
+            display: none;
+        }
+        @media screen and (max-width: 600px){
+            .tablet {
+                display: none;
+            }
+            .mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 601px){
+            .tablet {
+                display: block;
+            }
+            .mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kyc">
+        <h1 class="kyc-title">KYC</h1>
+        <span class="text-[#6F767E] text-[14px] font-medium">Trạng thái: <span class="text-[#91699C]">Đang đợi duyệt KYC</span></span>
+        <div class="mt-[30px] grid grid-cols-3 gap-5">
+            <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
+                <label class="flex font-medium">Ảnh CMT/CCCD Mặt Trước </label>
+                <div class="box-upload">
+                    <form class="box" method="post" action="" enctype="multipart/form-data">
+                        <div class="box__input text-[14px] py-5">
+                            <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+                            <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
+                            <p class="font-bold tablet">Hoặc</p>
+                            <label for="file" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
+                <label class="flex font-medium">Ảnh CMT/CCCD Mặt Sau </label>
+                <div class="box-upload">
+                    <form class="box" method="post" action="" enctype="multipart/form-data">
+                        <div class="box__input text-[14px] py-5">
+                            <input class="box__file" type="file" name="files[]" id="file1" data-multiple-caption="{count} files selected" multiple />
+                            <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
+                            <p class="font-bold tablet">Hoặc</p>
+                            <label for="file1" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
+                <label class="flex font-medium">Ảnh Chân Dung </label>
+                <div class="box-upload">
+                    <form class="box" method="post" action="" enctype="multipart/form-data">
+                        <div class="box__input text-[14px] py-5">
+                            <input class="box__file" type="file" name="files[]" id="file2" data-multiple-caption="{count} files selected" multiple />
+                            <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
+                            <p class="font-bold tablet">Hoặc</p>
+                            <label for="file2" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex justify-center mt-[50px] col-span-3">
+                <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+                    LƯU
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
