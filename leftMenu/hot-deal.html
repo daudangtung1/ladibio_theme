@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot deal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .hot-deal {
+            @apply w-full overflow-hidden p-4;
+        }
+        .hot-deal-title {
+            @apply text-[18px] font-[600];
+        }
+        .hot-deal-content {
+            @apply mt-[30px] grid grid-cols-3 gap-6;
+        }
+        .content-item-deal {
+            @apply md:col-span-1 col-span-3 w-full bg-[#EFEFEF] rounded-md px-4 py-2 relative;
+        }
+        .hot-deal-checkbox input:checked ~ .checkmark {
+            background-image:url('../images/checkbox-checked.png');
+            background-repeat: no-repeat;
+            background-size: auto 70%;
+            background-position: center;
+            @apply w-[30px] h-[30px] bg-[#FB2D5A] border border-[#FB2D5A];
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .checkmark {
+            @apply absolute w-[30px] h-[30px] border rounded-md border-[#575757] top-2 right-4;
+        }
+        .view-detail-hot-deal {
+            @apply w-full rounded-md border border-[#FB2D5A] text-[#FB2D5A] h-[32px] my-2;
+        }
+    </style>
+</head>
+<body>
+<div class="hot-deal">
+    <h1 class="hot-deal-title">Hot deal</h1>
+    <div class="hot-deal-content">
+        <div class="content-item-deal">
+            <h2 class="text-base font-medium col-span-2">Nhà cửa</h2>
+            <label class="hot-deal-checkbox">
+                <input type="checkbox" style="appearance: none">
+                <span class="checkmark"></span>
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+                <img class="" src="../images/multi-user.png" alt="multi-user"/>
+                <img class="" src="../images/percent-icon.png" alt="percent"/>
+            </div>
+            <div class="grid grid-cols-2 mt-1">
+                <span class="text-base font-medium">20 <span class="text-sm ml-1 font-normal">Sử dụng</span></span>
+                <span class="text-base font-medium">1% <span class="text-sm ml-1 font-normal">Rate</span></span>
+            </div>
+            <button class="view-detail-hot-deal">Xem sản phẩm</button>
+        </div>
+        <div class="content-item-deal">
+            <h2 class="text-base font-medium col-span-2">Nhà cửa</h2>
+            <label class="hot-deal-checkbox">
+                <input type="checkbox" style="appearance: none">
+                <span class="checkmark"></span>
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+                <img class="" src="../images/multi-user.png" alt="multi-user"/>
+                <img class="" src="../images/percent-icon.png" alt="percent"/>
+            </div>
+            <div class="grid grid-cols-2 mt-1">
+                <span class="text-base font-medium">20 <span class="text-sm ml-1 font-normal">Sử dụng</span></span>
+                <span class="text-base font-medium">1% <span class="text-sm ml-1 font-normal">Rate</span></span>
+            </div>
+            <button class="view-detail-hot-deal">Xem sản phẩm</button>
+        </div>
+        <div class="content-item-deal">
+            <h2 class="text-base font-medium col-span-2">Nhà cửa</h2>
+            <label class="hot-deal-checkbox">
+                <input type="checkbox" checked style="appearance: none">
+                <span class="checkmark"></span>
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+                <img class="" src="../images/multi-user.png" alt="multi-user"/>
+                <img class="" src="../images/percent-icon.png" alt="percent"/>
+            </div>
+            <div class="grid grid-cols-2 mt-1">
+                <span class="text-base font-medium">20 <span class="text-sm ml-1 font-normal">Sử dụng</span></span>
+                <span class="text-base font-medium">100% <span class="text-sm ml-1 font-normal">Rate</span></span>
+            </div>
+            <button class="view-detail-hot-deal">Xem sản phẩm</button>
+        </div>
+    </div>
+    <div class="flex justify-center my-[50px]">
+        <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+            CẬP NHẬT HOT DEAL
+        </button>
+    </div>
+</div>
+</body>
+</html>

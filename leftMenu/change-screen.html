@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thay đổi giao diện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .change-screen {
+            @apply w-full overflow-hidden p-4;
+        }
+        .change-screen-title {
+            @apply text-[18px] font-[600];
+        }
+        .change-screen-content {
+            @apply mt-[30px] grid grid-cols-3 gap-6;
+        }
+        .name-item-screen {
+            @apply text-base font-medium uppercase mb-2;
+        }
+        .btn-not-checked {
+            @apply text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded w-full mt-[20px];
+        }
+        .btn-checked {
+            @apply text-white w-[260px] h-[40px] bg-[#5F5F5F] rounded w-full mt-[20px];
+        }
+        .content-item-screen {
+            @apply md:col-span-1 col-span-3;
+        }
+    </style>
+</head>
+<body>
+<div class="change-screen">
+    <h1 class="change-screen-title">Thay đổi giao diện</h1>
+    <div class="change-screen-content">
+        <div class="content-item-screen">
+            <h2 class="name-item-screen">Instabio</h2>
+            <img src="../images/screen.png" alt="screen" class="w-full"/>
+            <button class="btn-checked">
+                Đã chọn
+            </button>
+        </div>
+        <div class="content-item-screen">
+            <h2 class="name-item-screen">KOL.ASIA</h2>
+            <img src="../images/screen.png" alt="screen" class="w-full"/>
+            <button class="btn-not-checked">
+                Chọn Theme này
+            </button>
+        </div>
+        <div class="content-item-screen">
+            <h2 class="name-item-screen">PASSIO.ECO</h2>
+            <img src="../images/screen.png" alt="screen" class="w-full"/>
+            <button class="btn-not-checked">
+                Chọn Theme này
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

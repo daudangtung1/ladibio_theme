@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thay đổi Domain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .domain {
+            @apply w-full overflow-hidden p-4;
+        }
+        .domain-title {
+            @apply text-[18px] font-[600];
+        }
+        .image-dot-star {
+            @apply w-[10px] h-[9px] ml-2 mt-2;
+        }
+        .input-domain {
+            @apply w-full mr-1 border-[1px] border-solid border-[#CBCBCB] h-[40px] rounded mt-2 px-3 placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+
+    </style>
+</head>
+<body>
+<div class="domain">
+    <h1 class="domain-title">Thay đổi Domain</h1>
+    <span class="md:text-sm text-xs text-[#6F767E]">Lưu ý:
+        <span class="text-[#91699C]">Nếu Bạn thay đổi tên miền của mình, Bạn không thể đổi lại sau 30 ngày</span>
+    </span>
+    <div class="mt-[30px] w-full">
+        <label class="flex">Domain mới: <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></label>
+        <div class="grid md:grid-cols-2 grid-cols-6 md:gap-3 gap-1">
+            <input type="text" class="input-domain md:col-span-1 col-span-4" placeholder="Nhập Domain mới">
+            <input type="text" class="input-domain md:col-span-1 col-span-2  bg-[#ECECEC]" value=".kol.bio" placeholder="Nhập channel name" disabled>
+        </div>
+        <div class="flex justify-center my-[50px]">
+            <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+                LƯU THAY ĐỔI
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
