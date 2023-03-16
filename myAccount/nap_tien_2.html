@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nạp tiền</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .input-money {
+            @apply w-full overflow-hidden p-4;
+        }
+        .input-money-title {
+            @apply text-[18px] font-[600];
+        }
+        .transfer-money {
+            @apply border-b border-b-[#CBCBCB] md:w-[340px] w-full mt-[30px] rounded flex;
+        }
+        .transfer-money .btn-active {
+            @apply bg-[#FB2D5A] text-center rounded md:h-[40px] h-[32px] md:leading-[40px] leading-[32px] text-white;
+        }
+        .transfer-money .btn-not-active {
+            @apply text-center md:leading-[40px] leading-[32px] text-[#363636];
+        }
+        .image-dot-star {
+            @apply w-[10px] h-[9px] ml-1 mt-1;
+        }
+    </style>
+</head>
+<body>
+<div class="input-money">
+    <h1 class="input-money-title">Nạp tiền</h1>
+    <div class="transfer-money">
+        <div class="btn-not-active md:w-[140px] w-[50%]">
+            <a href="#" class="md:text-sm text-xs">CHUYỂN KHOẢN</a>
+        </div>
+        <div class="btn-active md:w-[200px] w-[50%]">
+            <a href="#" class="md:text-sm text-xs">THANH TOÁN QUA VNPAY</a>
+        </div>
+    </div>
+    <div class="mt-[30px] text-sm">
+        <span class="font-semibold">Quét mã QR để thanh toán:</span>
+        <div class="flex justify-center mt-4">
+            <img src="../images/qr-code.png" alt="qr-code"/>
+        </div>
+        <div class="font-semibold mt-[30px] mb-4">THÔNG TIN THANH TOÁN: </div>
+        <div class="flex mb-3">
+            <span class="md:w-[200px] w-[100px]">Ngân hàng:</span>
+            <span class="font-semibold">Ngân hàng TMCP Công Thương Việt Nam</span>
+        </div>
+        <div class="flex mb-3">
+            <span class="md:w-[200px] w-[100px]">Số tài khoản:</span>
+            <span class="font-semibold">0904865544</span>
+        </div>
+        <div class="flex mb-3">
+            <span class="md:w-[200px] w-[100px]">Chủ tài khoản:</span>
+            <span class="font-semibold">NGUYỄN THÙY DUNG</span>
+        </div>
+        <div class="flex mb-3">
+            <span class="md:w-[200px] w-[180px] flex">Nội dung chuyển khoản:<img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></span>
+            <span class="font-semibold">Nhập mã giao dịch</span>
+        </div>
+        <span class="italic text-[#FB2D5A]">Nội dung chuyển khoản là bắt buộc để Chúng tôi xác nhận thông tin thanh toán nhanh nhất</span>
+        <div class="font-semibold mt-5">Mọi vướng mắc, Bạn vui lòng liên hệ với Chúng tôi để được giải đáp:</div>
+        <div class="mt-4 flex">
+            <img src="../images/phone-icon.png" alt="phone"/>
+            <span class="font-semibold ml-3">0362.615.688</span>
+        </div>
+        <div class="mt-4 flex">
+            <img src="../images/mail-icon.png" alt="mail"/>
+            <span class="font-semibold ml-3">support@buycost.vn</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
