@@ -21,10 +21,10 @@
         .transfer-money {
             @apply border-b border-b-[#CBCBCB] md:w-[340px] w-full mt-[30px] rounded flex;
         }
-        .transfer-money .btn-active {
+        .btn-active {
             @apply bg-[#FB2D5A] text-center rounded md:h-[40px] text-white h-[32px] md:leading-[40px] leading-[32px];
         }
-        .transfer-money .btn-not-active {
+        .btn-not-active {
             @apply text-center md:leading-[40px] leading-[32px] text-[#363636];
         }
         .input-text-money {
@@ -50,83 +50,153 @@
 <body>
 <div class="input-money">
     <h1 class="input-money-title">Nạp tiền</h1>
-    <div class="transfer-money">
-        <div class="btn-active md:w-[140px] w-[50%]">
-            <a href="#" class="text-white md:text-sm text-xs">CHUYỂN KHOẢN</a>
+    <div id="tabs" class="transfer-money">
+        <div class="md:w-[140px] w-[50%]">
+            <a href="#transfer" class="md:text-sm text-xs" id="default-tab">CHUYỂN KHOẢN</a>
         </div>
-        <div class="btn-not-active md:w-[200px] w-[50%]">
-            <a href="#" class="md:text-sm text-xs">THANH TOÁN QUA VNPAY</a>
-        </div>
-    </div>
-    <div class="md:mt-[30px] grid grid-cols-2 md:gap-8">
-        <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
-            <label class="flex">Mã giao dịch: </label>
-            <input type="text" class="w-full input-text-money" placeholder="zmknUXdRS8">
-        </div>
-        <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
-            <label class="flex">Loại giao dịch: </label>
-            <input type="text" class="w-full input-text-money" placeholder="Nạp tiền vào tài khoản">
-        </div>
-        <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
-            <label class="flex">Trạng thái: </label>
-            <input type="text" class="w-full input-text-money" placeholder="Draf">
-        </div>
-        <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
-            <label class="flex">Số tiền nạp (vnđ): </label>
-            <input type="number" class="w-full input-text-money" placeholder="1,000,000">
+        <div class=" md:w-[200px] w-[50%]">
+            <a href="#vnpay" class="md:text-sm text-xs">THANH TOÁN QUA VNPAY</a>
         </div>
     </div>
-    <div class="block-title-child">
-        <h2>Hướng dẫn nạp tiền</h2>
-    </div>
-    <div class="md:ml-3 text-sm">
-        <div class="grid grid-cols-10 mt-[30px] gap-5">
-            <h3 class="tutorial-step">Bước 1: </h3>
-            <p class="tutorial-content">Nhập số tiền muốn nạp vào mục “<span class="font-medium">Số tiền nạp (vnđ)</span>”</p>
-            <h3 class="tutorial-step">Bước 2: </h3>
-            <div class="tutorial-content">Bạn tiến hành thanh toán (chuyển khoản) theo số tiền vừa nhập.<br>
-                <span class="font-medium">Lưu ý:</span><br>
-                Bạn nên đọc kỹ thông tin về: Số tài khoản; chủ tài khoản; tên ngân hàng; nội dung chuyển khoản để tránh sai sót trong quá trình chuyển khoản và để hệ thống của chúng tôi xác nhận khoản thanh toán của bạn được nhanh chóng
-                <br><br>
-                <span class="font-medium">THÔNG TIN THANH TOÁN:</span>
-                <table class="w-full">
-                    <tr class="h-[40px]">
-                        <td class="md:w-[200px]">Ngân hàng:</td>
-                        <td><span class="font-medium">Ngân hàng TMCP Công Thương Việt Nam</span></td>
-                    </tr>
-                    <tr class="h-[40px]">
-                        <td class="md:w-[200px]">Số tài khoản:</td>
-                        <td><span class="font-medium">0904865544</span></td>
-                    </tr>
-                    <tr class="h-[40px]">
-                        <td class="md:w-[200px]">Chủ tài khoản:</td>
-                        <td><span class="font-medium">NGUYỄN THÙY DUNG</span></td>
-                    </tr>
-                    <tr class="h-[40px]">
-                        <td class="flex md:w-[200px]">Nội dung chuyển khoản:<img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></td>
-                        <td><span class="font-medium">Nhập mã giao dịch</span></td>
-                    </tr>
-                </table>
-                <span class="text-[#FB2D5A] italic">Nội dung chuyển khoản là bắt buộc để Chúng tôi xác nhận thông tin thanh toán nhanh nhất</span>
+    <div id="tab-contents">
+        <div id="transfer" >
+            <div class="md:mt-[30px] grid grid-cols-2 md:gap-8">
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                    <label class="flex">Mã giao dịch: </label>
+                    <input type="text" class="w-full input-text-money" placeholder="zmknUXdRS8">
+                </div>
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                    <label class="flex">Loại giao dịch: </label>
+                    <input type="text" class="w-full input-text-money" placeholder="Nạp tiền vào tài khoản">
+                </div>
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                    <label class="flex">Trạng thái: </label>
+                    <input type="text" class="w-full input-text-money" placeholder="Draf">
+                </div>
+                <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
+                    <label class="flex">Số tiền nạp (vnđ): </label>
+                    <input type="number" class="w-full input-text-money" placeholder="1,000,000">
+                </div>
             </div>
-            <h3 class="tutorial-step">Bước 3: </h3>
-            <p class="tutorial-content">Sau khi chuyển khoản thành công, Bạn click vào nút “<span class="font-medium">TẠO GIAO DỊCH</span>”. Hệ thống sẽ tiến hành xác nhận và gửi thông báo đến Bạn khi quá trình xác nhận hoàn thành</p>
+            <div class="block-title-child">
+                <h2>Hướng dẫn nạp tiền</h2>
+            </div>
+            <div class="md:ml-3 text-sm">
+                <div class="grid grid-cols-10 mt-[30px] gap-5">
+                    <h3 class="tutorial-step">Bước 1: </h3>
+                    <p class="tutorial-content">Nhập số tiền muốn nạp vào mục “<span class="font-medium">Số tiền nạp (vnđ)</span>”</p>
+                    <h3 class="tutorial-step">Bước 2: </h3>
+                    <div class="tutorial-content">Bạn tiến hành thanh toán (chuyển khoản) theo số tiền vừa nhập.<br>
+                        <span class="font-medium">Lưu ý:</span><br>
+                        Bạn nên đọc kỹ thông tin về: Số tài khoản; chủ tài khoản; tên ngân hàng; nội dung chuyển khoản để tránh sai sót trong quá trình chuyển khoản và để hệ thống của chúng tôi xác nhận khoản thanh toán của bạn được nhanh chóng
+                        <br><br>
+                        <span class="font-medium">THÔNG TIN THANH TOÁN:</span>
+                        <div class="flex my-3">
+                            <span class="md:w-[200px] w-[140px]">Ngân hàng:</span>
+                            <span class="font-semibold">Ngân hàng TMCP Công Thương Việt Nam</span>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="md:w-[200px] w-[100px]">Số tài khoản:</span>
+                            <span class="font-semibold">0904865544</span>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="md:w-[200px] w-[100px]">Chủ tài khoản:</span>
+                            <span class="font-semibold">NGUYỄN THÙY DUNG</span>
+                        </div>
+                        <div class="flex mb-3">
+                            <span class="md:w-[200px] w-[140px] flex">Nội dung chuyển khoản:<img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></span>
+                            <span class="font-semibold">Nhập mã giao dịch</span>
+                        </div>
+                        <span class="text-[#FB2D5A] italic">Nội dung chuyển khoản là bắt buộc để Chúng tôi xác nhận thông tin thanh toán nhanh nhất</span>
+                    </div>
+                    <h3 class="tutorial-step">Bước 3: </h3>
+                    <p class="tutorial-content">Sau khi chuyển khoản thành công, Bạn click vào nút “<span class="font-medium">TẠO GIAO DỊCH</span>”. Hệ thống sẽ tiến hành xác nhận và gửi thông báo đến Bạn khi quá trình xác nhận hoàn thành</p>
+                </div>
+                <div class="font-semibold mt-5">Mọi vướng mắc, Bạn vui lòng liên hệ với Chúng tôi để được giải đáp:</div>
+                <div class="mt-4 flex">
+                    <img src="../images/phone-icon.png" alt="phone"/>
+                    <span class="font-semibold ml-3">0362.615.688</span>
+                </div>
+                <div class="mt-4 flex">
+                    <img src="../images/mail-icon.png" alt="mail"/>
+                    <span class="font-semibold ml-3">support@buycost.vn</span>
+                </div>
+            </div>
+            <div class="flex justify-center my-[50px]">
+                <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+                    TẠO GIAO DỊCH
+                </button>
+            </div>
         </div>
-        <div class="font-semibold mt-5">Mọi vướng mắc, Bạn vui lòng liên hệ với Chúng tôi để được giải đáp:</div>
-        <div class="mt-4 flex">
-            <img src="../images/phone-icon.png" alt="phone"/>
-            <span class="font-semibold ml-3">0362.615.688</span>
-        </div>
-        <div class="mt-4 flex">
-            <img src="../images/mail-icon.png" alt="mail"/>
-            <span class="font-semibold ml-3">support@buycost.vn</span>
+        <div id="vnpay">
+            <div class="mt-[30px] text-sm">
+                <span class="font-semibold">Quét mã QR để thanh toán:</span>
+                <div class="flex justify-center mt-4">
+                    <img src="../images/qr-code.png" alt="qr-code"/>
+                </div>
+                <div class="font-semibold mt-[30px] mb-4">THÔNG TIN THANH TOÁN: </div>
+                <div class="flex mb-3">
+                    <span class="md:w-[200px] w-[100px]">Ngân hàng:</span>
+                    <span class="font-semibold">Ngân hàng TMCP Công Thương Việt Nam</span>
+                </div>
+                <div class="flex mb-3">
+                    <span class="md:w-[200px] w-[100px]">Số tài khoản:</span>
+                    <span class="font-semibold">0904865544</span>
+                </div>
+                <div class="flex mb-3">
+                    <span class="md:w-[200px] w-[100px]">Chủ tài khoản:</span>
+                    <span class="font-semibold">NGUYỄN THÙY DUNG</span>
+                </div>
+                <div class="flex mb-3">
+                    <span class="md:w-[200px] w-[180px] flex">Nội dung chuyển khoản:<img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/></span>
+                    <span class="font-semibold">Nhập mã giao dịch</span>
+                </div>
+                <span class="italic text-[#FB2D5A]">Nội dung chuyển khoản là bắt buộc để Chúng tôi xác nhận thông tin thanh toán nhanh nhất</span>
+                <div class="font-semibold mt-5">Mọi vướng mắc, Bạn vui lòng liên hệ với Chúng tôi để được giải đáp:</div>
+                <div class="mt-4 flex">
+                    <img src="../images/phone-icon.png" alt="phone"/>
+                    <span class="font-semibold ml-3">0362.615.688</span>
+                </div>
+                <div class="mt-4 flex">
+                    <img src="../images/mail-icon.png" alt="mail"/>
+                    <span class="font-semibold ml-3">support@buycost.vn</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="flex justify-center my-[50px]">
-        <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
-           TẠO GIAO DỊCH
-        </button>
-    </div>
+    <script>
+        let tabsContainer = document.querySelector("#tabs");
+
+        let tabTogglers = tabsContainer.querySelectorAll("a");
+        console.log(tabTogglers);
+
+        tabTogglers.forEach(function(toggler) {
+            toggler.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                let tabName = this.getAttribute("href");
+
+                let tabContents = document.querySelector("#tab-contents");
+
+                for (let i = 0; i < tabContents.children.length; i++) {
+
+                    tabTogglers[i].parentElement.classList.remove("btn-active");
+                    tabTogglers[i].parentElement.classList.add("btn-not-active");
+                    tabContents.children[i].classList.remove("hidden");
+                    if ("#" + tabContents.children[i].id === tabName) {
+                        continue;
+                    }
+                    tabContents.children[i].classList.add("hidden");
+
+                }
+                e.target.parentElement.classList.add("btn-active");
+                e.target.parentElement.classList.remove("btn-not-active");
+            });
+        });
+
+        document.getElementById("default-tab").click();
+
+    </script>
 </div>
 </body>
 </html>
