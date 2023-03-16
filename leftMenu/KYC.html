@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KYC</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss" lang="scss">
         @tailwind base;
@@ -52,35 +55,41 @@
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh CMT/CCCD Mặt Trước </label>
                 <div class="box-upload">
-                    <div id="drop-zone" class="py-5">
-                        <input type="file" id="file-input" class="box__file" multiple>
+                    <div id="drop-area" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
-                        <label for="file-input" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <label for="fileElem" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <input type="file" id="fileElem" multiple accept="image/*"
+                               onchange="handleFiles(this.files)"  style="display: none">
                     </div>
                 </div>
+                <span id="path_name"></span>
             </div>
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh CMT/CCCD Mặt Sau </label>
                 <div class="box-upload">
-                    <div id="drop-zone1" class="py-5">
-                        <input type="file" id="file-input1" class="box__file" multiple>
+                    <div id="drop-area1" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
-                        <label for="file-input" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <label for="fileElem1" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <input type="file" id="fileElem1" multiple accept="image/*"
+                               onchange="handleFiles1(this.files)"  style="display: none">
                     </div>
                 </div>
+                <span id="path_name1"></span>
             </div>
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh Chân Dung </label>
                 <div class="box-upload">
-                    <div id="drop-zone2" class="py-5">
-                        <input type="file" id="file-input2" class="box__file" multiple>
+                    <div id="drop-area2" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
-                        <label for="file-input" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <label for="fileElem2" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        <input type="file" id="fileElem2" multiple accept="image/*"
+                               onchange="handleFiles2(this.files)"  style="display: none">
                     </div>
                 </div>
+                <span id="path_name2"></span>
             </div>
             <div class="flex justify-center mt-[50px] col-span-3">
                 <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
@@ -91,60 +100,57 @@
     </div>
 </body>
 <script>
-    const dropZone = document.getElementById('drop-zone');
-    const dropZone1 = document.getElementById('drop-zone1');
-    const dropZone2 = document.getElementById('drop-zone2');
-    const fileInput = document.getElementById('file-input');
-    const fileInput1 = document.getElementById('file-input1');
-    const fileInput2 = document.getElementById('file-input2');
+    let dropArea = document.getElementById('drop-area');
+    let dropArea1 = document.getElementById('drop-area1');
+    let dropArea2 = document.getElementById('drop-area2');
 
-    dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone.classList.add('dragover');
-    });
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false)
+        dropArea1.addEventListener(eventName, preventDefaults1, false)
+        dropArea2.addEventListener(eventName, preventDefaults2, false)
+    })
 
-    dropZone.addEventListener('dragleave', () => {
-        dropZone.classList.remove('dragover');
-    });
+    function preventDefaults(e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+    function preventDefaults1(e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+    function preventDefaults2(e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
 
-    dropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropZone.classList.remove('dragover');
-        fileInput.files = e.dataTransfer.files;
-    });
+    dropArea.addEventListener('drop', handleDrop, false)
+    dropArea1.addEventListener('drop', handleDrop1, false)
+    dropArea2.addEventListener('drop', handleDrop2, false)
 
-    fileInput.addEventListener('change', () => {
-        console.log(fileInput.files);
-    });
+    function handleDrop(e) {
+        let dt = e.dataTransfer
+        let files = dt.files
+        handleFiles(files)
+    }
+    function handleDrop1(e) {
+        let dt = e.dataTransfer
+        let files = dt.files
+        handleFiles1(files)
+    }
+    function handleDrop2(e) {
+        let dt = e.dataTransfer
+        let files = dt.files
+        handleFiles2(files)
+    }
 
-    dropZone1.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone1.classList.add('dragover');
-    });
-
-    dropZone1.addEventListener('dragleave', () => {
-        dropZone1.classList.remove('dragover');
-    });
-
-    dropZone1.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropZone1.classList.remove('dragover');
-        fileInput1.files = e.dataTransfer.files;
-    });
-
-    dropZone2.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone2.classList.add('dragover');
-    });
-
-    dropZone2.addEventListener('dragleave', () => {
-        dropZone2.classList.remove('dragover');
-    });
-
-    dropZone2.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropZone2.classList.remove('dragover');
-        fileInput2.files = e.dataTransfer.files;
-    });
+    function handleFiles(files) {
+        $('#path_name').text(files[0].name)
+    }
+    function handleFiles1(files) {
+        $('#path_name1').text(files[0].name)
+    }
+    function handleFiles2(files) {
+        $('#path_name2').text(files[0].name)
+    }
 </script>
 </html>
