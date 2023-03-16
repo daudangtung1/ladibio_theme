@@ -81,9 +81,9 @@
             <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
                 <label class="flex font-bold">Ảnh nền: <img class="w-[10px] h-[9px] ml-2 mt-2"
                                                             src="../images/dot_star.png" alt="dot_star"/></label>
-                <div class="box-upload">
+                <div class="box-upload" id="box-upload">
                     <div id="drop-area" class="pt-7">
-                            <p class="text-[#FB2D5A]">Kéo và thả hình ảnh vào đây</p>
+                            <span class="text-[#FB2D5A]">Kéo và thả hình ảnh vào đây</span>
                             <p class="font-bold">Hoặc</p>
                             <label for="fileElem" class="text-[#FB2D5A]">Click để chọn ảnh</label>
                             <input type="file" id="fileElem" multiple accept="image/*"
@@ -125,7 +125,9 @@
         $('#path_name').text(files[0].name)
     }
 
-
+    $('#box-upload').on('click',function () {
+        console.log('ss')
+    })
 
 </script>
 </html>
