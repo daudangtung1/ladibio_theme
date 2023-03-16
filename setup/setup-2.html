@@ -34,6 +34,10 @@
             box-sizing: border-box;
             @apply mt-2 md:w-[268px] w-full h-[128px] text-center transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none;
         }
+
+        #drop-zone p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -62,17 +66,16 @@
                 <div class="md:col-span-1 col-span-2 md:mt-0 mt-4">
                     <label class="flex font-bold">Ảnh nền: <img class="w-[10px] h-[9px] ml-2 mt-2" src="../images/dot_star.png" alt="dot_star"/></label>
                     <div class="box-upload">
-                        <form class="box" method="post" action="" enctype="multipart/form-data">
-                            <div class="box__input text-[14px] pt-7">
-                                <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-                                <p class="text-[#FB2D5A]">Kéo và thả hình ảnh vào đây</p>
-                                <p class="font-bold">Hoặc</p>
-                                <label for="file" class="text-[#FB2D5A]">Click để chọn ảnh</label>
-                            </div>
-                        </form>
+                        <div id="drop-zone" class="pt-7">
+                            <input type="file" id="file-input" class="box__file" multiple>
+                            <p class="text-[#FB2D5A]">Kéo và thả hình ảnh vào đây</p>
+                            <p class="font-bold">Hoặc</p>
+                            <label for="file-input" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                        </div>
                     </div>
                 </div>
-                <div class="flex justify-center mt-[50px]">
+
+                <div class="flex justify-center mt-[50px] col-span-2">
                     <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
                         LƯU THAY ĐỔI
                     </button>
@@ -81,4 +84,27 @@
         </div>
     </div>
 </body>
+<script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        fileInput.files = e.dataTransfer.files;
+    });
+
+    fileInput.addEventListener('change', () => {
+        console.log(fileInput.files);
+    });
+</script>
 </html>

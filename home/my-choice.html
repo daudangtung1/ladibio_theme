@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Choice</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .main-homepage {
+            @apply p-0 m-0 overflow-hidden bg-[#EFEFEF] relative h-screen;
+        }
+        .slideshow {
+            @apply w-full relative;
+        }
+        .slideshow img {
+            @apply w-full md:h-auto md:max-h-[400px] h-[252px] md:object-none object-cover;
+        }
+        .camera-cover {
+            background: rgba(0, 0, 0, 0.5);
+            @apply h-[35px] w-[93px] absolute rounded-lg z-10 md:bottom-[82px] md:right-[12px] bottom-[205px] right-[10px] flex items-center justify-center;
+        }
+        .block-content {
+            @apply h-[700px] bg-white z-20 w-[98%] absolute mx-auto top-[335px] rounded-lg p-4;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+<div class="main-homepage">
+    <div class="relative">
+        <div class="slideshow">
+            <div><img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"></div>
+            <div><img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"></div>
+            <div><img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"></div>
+        </div>
+        <div class="camera-cover">
+            <img src="../images/camera-icon.png" alt="camera"/>
+            <span class="font-semibold text-base text-white ml-1">Cover</span>
+        </div>
+    </div>
+    <div class="block-content">
+        <div class="flex justify-between">
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $('.slideshow').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        draggable: false,
+        arrows: false,
+    });
+</script>
+</html>
