@@ -54,7 +54,7 @@
         <div class="mt-[30px] grid grid-cols-3 gap-5">
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh CMT/CCCD Mặt Trước </label>
-                <div class="box-upload">
+                <div class="box-upload" id="box-upload">
                     <div id="drop-area" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
@@ -67,7 +67,7 @@
             </div>
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh CMT/CCCD Mặt Sau </label>
-                <div class="box-upload">
+                <div class="box-upload" id="box-upload1">
                     <div id="drop-area1" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
@@ -80,7 +80,7 @@
             </div>
             <div class="md:col-span-1 col-span-3 md:mt-0 mt-4">
                 <label class="flex font-medium">Ảnh Chân Dung </label>
-                <div class="box-upload">
+                <div class="box-upload" id="box-upload2">
                     <div id="drop-area2" class="py-5">
                         <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
                         <p class="font-bold tablet">Hoặc</p>
@@ -152,5 +152,15 @@
     function handleFiles2(files) {
         $('#path_name2').text(files[0].name)
     }
+
+    $('#box-upload').on('click',function() {
+        $('#fileElem')[0].click();
+    });
+    $('#box-upload1').on('click',function() {
+        $('#fileElem1')[0].click();
+    });
+    $('#box-upload2').on('click',function() {
+        $('#fileElem2')[0].click();
+    });
 </script>
 </html>

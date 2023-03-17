@@ -85,7 +85,7 @@
                     <div id="drop-area" class="pt-7">
                             <span class="text-[#FB2D5A]">Kéo và thả hình ảnh vào đây</span>
                             <p class="font-bold">Hoặc</p>
-                            <label for="fileElem" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                            <label class="text-[#FB2D5A]">Click để chọn ảnh</label>
                             <input type="file" id="fileElem" multiple accept="image/*"
                                    onchange="handleFiles(this.files)"  style="display: none">
                     </div>
@@ -125,9 +125,9 @@
         $('#path_name').text(files[0].name)
     }
 
-    $('#box-upload').on('click',function () {
-        console.log('ss')
-    })
+    $('#box-upload').on('click',function() {
+        $('#fileElem')[0].click();
+    });
 
 </script>
 </html>
