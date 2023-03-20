@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm Story</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss" lang="scss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        @media screen and (max-width: 600px) {
+            .tablet {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .tablet {
+                display: block;
+            }
+
+            .mobile {
+                display: none;
+            }
+        }
+
+        .add-story {
+            @apply w-full overflow-hidden p-4;
+        }
+        .add-story-title {
+            @apply text-[18px] font-[600];
+        }
+        .add-story-content {
+            @apply grid grid-cols-2 md:gap-8 gap-4 w-full mt-[30px];
+        }
+        .image-dot-star {
+            @apply w-[10px] h-[9px] ml-2 mt-1;
+        }
+        .add-story-content .toggle-label {
+            @apply relative block w-[2.5] h-5 rounded-full duration-150 ease-out;
+        }
+        .add-story-content .toggle-label:before {
+            background: linear-gradient(180deg, #E7E7E7 0.05%, #C9C9C9 79.05%, #D1D1D1 100.05%);
+            background-size: 40%;
+            content: "";
+            transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1);
+            transform: translateX(0);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            @apply absolute top-[0.01rem] left-[0.01rem] block w-[1.25rem] h-[1.25rem] rounded-[9999%];
+        }
+        .toggle-checkbox:checked + .toggle-label:before {
+            transform: translateX(1.9rem);
+        }
+        .toggle.slim .toggle-label:before {
+            top: -0.15rem;
+            left: 0;
+        }
+        .toggle.slim .toggle-checkbox:checked + .toggle-label:before {
+            transform: translateX(1.75rem);
+        }
+        .toggle.colour .toggle-label {
+            background: linear-gradient(180deg, #ADADAD 0.01%, #989898 99.99%);
+        }
+        .toggle.colour .toggle-checkbox:checked + .toggle-label {
+            background: linear-gradient(180deg, #FB4F75 0.01%, #FB2D5A 86.99%, #F11444 99.99%);
+        }
+        .box-upload {
+            box-sizing: border-box;
+            @apply mt-2 w-full text-center transition border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none;
+        }
+        .input-video {
+            @apply w-full border border-solid border-[#CBCBCB] h-[40px] rounded mt-2 px-3 placeholder:font-normal placeholder:italic focus:outline-none text-[#363636] font-medium;
+        }
+    </style>
+</head>
+<body>
+<div class="add-story">
+    <h1 class="add-story-title">Thêm story</h1>
+    <div class="add-story-content">
+        <div class="md:col-span-1 col-span-2">
+            <label class="flex">Link:
+                <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/>
+            </label>
+            <input type="text" class="input-video" placeholder="Nhập một liên kết">
+        </div>
+        <div class="md:col-span-1 col-span-2">
+            <div class="flex justify-between md:mt-[40px]">
+                <span class="font-medium">Sử dụng Tracking Accesstrade</span>
+                <div class="toggle colour w-[50px]">
+                    <input id="check1" class="toggle-checkbox hidden" type="checkbox">
+                    <label for="check1" class="toggle-label transition-color"></label>
+                </div>
+            </div>
+        </div>
+        <div class="md:col-span-1 col-span-2">
+            <label class="flex">Tiêu đề:
+                <img class="image-dot-star" src="../images/dot_star.png" alt="dot_star"/>
+            </label>
+            <input type="text" class="input-video" placeholder="Nhập tên tiêu đề">
+        </div>
+
+        <div class="md:col-span-1 col-span-2">
+            <label class="flex">Ảnh<span class="text-[#91699C] ml-2">JPEG or PNG Cover Image</span></label>
+            <div class="box-upload" id="box-upload-product">
+                <div id="drop-area-product" class="py-5">
+                    <p class="text-[#FB2D5A] tablet">Kéo và thả hình ảnh vào đây</p>
+                    <p class="font-bold tablet">Hoặc</p>
+                    <label for="file-product" class="text-[#FB2D5A]">Click để chọn ảnh</label>
+                    <input type="file" id="file-product" multiple accept="image/*"
+                           onchange="handleFiles(this.files)"  style="display: none">
+                </div>
+            </div>
+            <span id="path_name"></span>
+        </div>
+        <div class="flex justify-center my-[50px] col-span-2">
+            <button class="text-white w-[260px] h-[40px] bg-[#FB2D5A] rounded">
+                LƯU
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
