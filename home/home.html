@@ -23,6 +23,13 @@
             .mobile {
                 display: block;
             }
+            .title-item-product {
+                -webkit-line-clamp: 3;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                @apply px-3 mt-1 overflow-hidden leading-[10px];
+            }
         }
 
         @media screen and (min-width: 601px) {
@@ -32,6 +39,13 @@
 
             .mobile {
                 display: none;
+            }
+            .title-item-product {
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                @apply px-3 mt-1 overflow-hidden;
             }
         }
 
@@ -81,7 +95,7 @@
             @apply md:w-[90px] md:h-[90px] relative w-[68px] h-[68px] rounded-full border border-[#E6E6E6] ml-[24px] my-1 text-center font-medium text-[#363636];
         }
         .item-story .img-story {
-            @apply rounded-full object-contain md:w-[90px] md:h-[90px] w-[68px] h-[68px] border border-gray-100 shadow-sm mb-2;
+            @apply rounded-full object-cover md:w-[90px] md:h-[90px] w-[68px] h-[68px] border border-gray-100 shadow-sm mb-2;
         }
         .item-story .edit-pink {
             @apply absolute md:top-0 -top-[8px] right-0 h-6 w-6 my-1 rounded-full;
@@ -101,6 +115,58 @@
         }
         .slide-story .slick-slide {
          height: 148px !important;
+        }
+        /*my choice*/
+        .btn-add-product {
+            @apply w-full md:w-[200px] md:h-[140px] h-[50px] border border-[#FB2D5A] md:rounded-xl rounded-md text-[#FB2D5A] text-sm font-medium mt-5;
+        }
+        .btn-add-product-mobile {
+            @apply w-full md:w-[200px] md:h-[140px] h-[50px] border border-[#FB2D5A] md:rounded-xl rounded-md text-[#FB2D5A] text-sm font-medium mt-5 flex justify-center items-center ;
+        }
+        .block-title-category {
+            @apply w-full border-b mt-[30px] grid grid-cols-2;
+        }
+        .block-title-category h2 {
+            @apply text-center py-1 bg-[#ECECEC] max-w-[170px] text-[16px] text-[#363636] font-semibold rounded-t-lg;
+        }
+        .menu-right-category {
+            @apply px-3 whitespace-nowrap text-sm font-light leading-[32px];
+        }
+        .overflow-x-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .menu-category-active {
+            @apply font-semibold text-[#FB2D5A];
+        }
+        .list-products {
+            @apply grid md:grid-cols-3 grid-cols-2 md:gap-8 gap-3 mt-[30px];
+        }
+        .item-product{
+            @apply w-full md:h-[260px] h-[200px] border border-[#CBCBCB] rounded-xl relative;
+        }
+        .img-product {
+            @apply object-cover md:h-[200px] h-[130px] rounded-t-xl w-full;
+        }
+        .dialog-edit-product {
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            @apply rounded-md bg-white md:w-[194px] w-[128px] md:h-[158px] top-2 absolute right-8 md:px-6 px-1 text-sm;
+        }
+        .dialog-edit-product .item {
+            @apply flex h-[24px] items-center my-3;
+        }
+    /*    my review*/
+        .block-title-category-review h2{
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            @apply bg-[#ECECEC] mt-[30px] h-[48px] w-full md:leading-[48px] rounded-t-md md:px-4 px-2 md:text-base text-sm overflow-hidden pt-1 md:pt-0;
+        }
+        .block-title-category-review{
+            @apply relative;
+        }
+        .video-yt {
+            @apply mt-[15px];
         }
     </style>
 </head>
@@ -144,10 +210,10 @@
         </div>
         <div class="tabs-content-home" id="tabs-content-home">
             <div>
-               <a href="#my-choice" id="default-tab">MY CHOICE</a>
+               <a href="#my-choice" >MY CHOICE</a>
             </div>
             <div>
-                <a href="#my-review">MY REVIEW</a>
+                <a href="#my-review" id="default-tab">MY REVIEW</a>
             </div>
             <div>
                 <a href="#hot-deal">HOT DEAL</a>
@@ -156,13 +222,13 @@
         <div id="tab-contents">
             <div id="my-choice">
                 <div class="tablet">
-                    <button class="btn-add-product">
+                    <button class="btn-add-product" onclick="document.location.href='add-production.html'">
                         <img class="mx-auto mb-2" src="../images/icon-plus.png" alt="plus"/>
                         <span>THÊM SẢN PHẨM</span>
                     </button>
                 </div>
                 <div class="mobile">
-                    <button class="btn-add-product-mobile">
+                    <button class="btn-add-product-mobile" onclick="document.location.href='add-production.html'">
                         <img class="mr-3" src="../images/icon-plus.png" alt="plus"/>
                         <span>THÊM SẢN PHẨM</span>
                     </button>
@@ -177,27 +243,84 @@
                 </div>
                 <div class="list-products">
                     <div class="item-product">
-                        <div class="absolute right-2 top-2">
+                        <div class="absolute right-2 top-2" id="dot-three">
                             <img src="../images/three-vertical-dots.png" alt="=three dot"/>
                         </div>
-                        <img src="../images/cat.jpg" alt="cat" class="object-cover md:h-[200px] h-[130px] rounded-t-xl"/>
+                        <img src="../images/cat.jpg" alt="cat" class="img-product"/>
                         <div class="title-item-product">
                             <span class="text-sm">Đá mã não cạo mát xa cổ/ mắt/ mặt màu trong suốt châm cứu trong spa</span>
                         </div>
-                    </div>
-                    <div class="item-product">
-                        <div class="absolute right-2 top-2">
-                            <img src="../images/three-vertical-dots.png" alt="=three dot"/>
-                        </div>
-                        <img src="../images/cat.jpg" alt="cat" class="object-cover md:h-[200px] h-[130px] rounded-t-xl"/>
-                        <div class="title-item-product">
-                            <span class="text-sm">Đá mã não cạo mát xa cổ/ mắt/ mặt màu trong suốt châm cứu trong spa spa spa</span>
+                        <div class="dialog-edit-product" id="dialog-edit-product">
+                            <div class="item">
+                                <img src="../images/arrange-outline.png" alt="arrange"/>
+                                <span class="md:ml-3 ml-2">Sắp xếp sản phẩm</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/edit-outline.png" alt="edit"/>
+                                <span class="md:ml-3 ml-2">Sửa</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/eye-hide-outline.png" alt="eye hidden"/>
+                                <span class="md:ml-3 ml-2">Ẩn sản phẩm</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/delete-outline.png" alt="delete"/>
+                                <span class="md:ml-3 ml-2">Xóa sản phẩm</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="my-review">
-                my-review
+                <div class="tablet">
+                    <button class="btn-add-product" onclick="document.location.href='add-video.html'">
+                        <img class="mx-auto mb-2" src="../images/icon-plus.png" alt="plus"/>
+                        <span>THÊM VIDEO</span>
+                    </button>
+                </div>
+                <div class="mobile">
+                    <button class="btn-add-product-mobile" onclick="document.location.href='add-video.html'">
+                        <img class="mr-3" src="../images/icon-plus.png" alt="plus"/>
+                        <span>THÊM VIDEO</span>
+                    </button>
+                </div>
+                <div class="block-title-category-review">
+                    <h2>[REVIEW] TOP MÀU SON BÁN CHẠY NHẤT BBIA! CHỈ 76K/CÂY | ĐỘC QUYỀN HÀ LINH OFFICIAL</h2>
+                    <img src="../images/three-dot-bold.png" alt="three dot" class="absolute top-3 right-3"/>
+                </div>
+                <div class="video-yt">
+                    <iframe class="w-full md:h-[468px] h-[211px]" src="https://www.youtube.com/embed/dLQe4qEfVJw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="list-products">
+                    <div class="item-product">
+                        <div class="absolute right-2 top-2" id="dot-three1">
+                            <img src="../images/three-vertical-dots.png" alt="=three dot"/>
+                        </div>
+                        <img src="../images/cat.jpg" alt="cat" class="img-product"/>
+                        <div class="title-item-product">
+                            <span class="text-sm">Đá mã não cạo mát xa cổ/ mắt/ mặt màu trong suốt châm cứu trong spa</span>
+                        </div>
+                        <div class="dialog-edit-product" id="dialog-edit-product1">
+                            <div class="item">
+                                <img src="../images/arrange-outline.png" alt="arrange"/>
+                                <span class="md:ml-3 ml-2">Sắp xếp sản phẩm</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/edit-outline.png" alt="edit"/>
+                                <span class="md:ml-3 ml-2">Sửa</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/eye-hide-outline.png" alt="eye hidden"/>
+                                <span class="md:ml-3 ml-2">Ẩn sản phẩm</span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/delete-outline.png" alt="delete"/>
+                                <span class="md:ml-3 ml-2">Xóa sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="hot-deal">
 
@@ -208,10 +331,6 @@
 </div>
 </body>
 <script>
-    $(document).ready(function(){
-        $('#my-choice').load('my-choice.html');
-        $('#my-review').load('my-review.html');
-    });
 <!--    list images banner-->
     var listImgs = [
         'https://mdbcdn.b-cdn.net/img/new/slides/043.webp',
@@ -339,7 +458,36 @@ $('.slide-story').slick({
 });
     document.getElementById("default-tab").click();
 //category
+//    my choice
+    let listCategory = ['Spa', 'Nail','Chăm sóc thú cưng', 'Chăm sóc tóc', 'Chăm sóc bản thân'];
+    $.each(listCategory, function(index, value) {
+        $('#menu-right-category').append('<a href="#item-menu-category-'+index+'" id="item-menu-category-'+index+'" class="menu-right-category">'+value+'</a>')
+        $('#menu-right-category1').append('<a href="#item-menu-category-mobile'+index+'" id="item-menu-category-mobile'+index+'" class="menu-right-category">'+value+'</a>')
+        if (index === 0) {
+            $('#item-menu-category-0').addClass('menu-category-active');
+            $('#item-menu-category-mobile0').addClass('menu-category-active');
+        }
+        $('#item-menu-category-'+index).click(function() {
+            $('.menu-right-category').removeClass('menu-category-active');
+            $(this).addClass('menu-category-active');
+        });
+        $('#item-menu-category-mobile'+index).click(function() {
+            $('.menu-right-category').removeClass('menu-category-active');
+            $(this).addClass('menu-category-active');
+        });
+    });
 
+    $(document).ready(function() {
+        // Ẩn dialog khi trang được load
+        $("#dialog-edit-product").hide();
+        $("#dialog-edit-product1").hide();
+    })
+    $('#dot-three').on('click', function () {
+        $('#dialog-edit-product').toggle()
+    });
 
+    $('#dot-three1').on('click', function () {
+        $('#dialog-edit-product1').toggle()
+    });
 </script>
 </html>
