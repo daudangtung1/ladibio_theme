@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ladibio</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss" lang="scss">
         @tailwind base;
@@ -34,7 +37,16 @@
         .avatar-header {
             @apply md:w-[50px] md:h-[50px] w-[40px] h-[40px] object-cover rounded-[50%];
         }
-
+        .dialog-menu-right {
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+            @apply w-[254px] h-auto bg-[#FFFFFF] absolute top-20 z-10 right-4 rounded-md py-4;
+        }
+        .btn-my-ladingpage {
+            @apply text-[#FB2D5A] border border-[#FB2D5A] rounded w-full h-[28px] font-medium text-sm mt-1;
+        }
+        .item-menu {
+            @apply flex h-[50px] items-center px-4 border-b-[1px] border-b-[#DBDBDB];
+        }
         @media screen and (max-width: 600px) {
             .tablet {
                 display: none;
@@ -71,11 +83,60 @@
             <div class="header-right">
                 <img src="../images/View.png" alt="view" class="md:mr-3 -mr-[10px]"/>
                 <img src="../images/Notification.png" alt="Notification" class="md:mr-5"/>
-                <div class="rounded-[50%]">
+                <div class="rounded-full" id="avatar-user">
                     <img src="../images/khacde1903.jpg" alt="avatar" class="avatar-header"/>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="dialog-menu-right" id="dialog-menu-right">
+        <div class="px-4">
+            <div class="flex items-center">
+                <div class="rounded-full"><img src="../images/khacde1903.jpg" alt="avatar" class="avatar-header"/></div>
+                <div class="ml-3">
+                    <p class="font-semibold"> LadyBug</p>
+                    <p class="text-[#2A85FF] break-all text-sm text-center">Dokhacde1903@gmail.com</p>
+                </div>
+            </div>
+            <button class="btn-my-ladingpage">
+                Landing page của tôi
+            </button>
+        </div>
+        <ul class="mt-2">
+            <li class="item-menu">
+                <img src="../images/profile-left-menu.png" alt="profile" />
+                <span class="ml-3 text-sm">Profile</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/edit-left-menu.png" alt="edit" />
+                <span class="ml-3 text-sm">Chỉnh sửa cá nhân</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/add-channel-lefft-menu.png" alt="channel" />
+                <span class="ml-3 text-sm">Thêm channel</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/domain-left-menu.png" alt="domain" />
+                <span class="ml-3 text-sm">Thay đổi Domain</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/settings-right-menu.png" alt="settings" />
+                <span class="ml-3 text-sm">AccessTrade</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/donate-right-menu.png" alt="donate" />
+                <span class="ml-3 text-sm">Ủng hộ</span>
+            </li>
+            <li class="item-menu">
+                <img src="../images/hot-deal-left-menu.png" alt="hot-deal" />
+                <span class="ml-3 text-sm">Hot trend</span>
+            </li>
+        </ul>
+        <div class="flex mt-3 mb-2 justify-center items-center">
+            <img src="../images/logout.png" alt="logout" />
+            <span class="ml-3 text-sm">Log out</span>
+        </div>
+
     </div>
 <!--    <div class="content-main">-->
         <!--        content-->
@@ -84,3 +145,11 @@
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function() {
+        $("#dialog-menu-right").hide();
+    })
+    $('#avatar-user').on('click', function () {
+        $('#dialog-menu-right').toggle()
+    });
+</script>
