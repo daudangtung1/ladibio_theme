@@ -20,19 +20,23 @@
             @apply h-[37px] text-base bg-[#ECECEC] font-medium leading-[37px] px-3;
         }
         .responsive-table .table-row {
-           @apply border-b h-[48px] text-sm leading-[48px] px-3;
+           @apply border-b min-h-[48px] text-sm px-3 flex items-center;
         }
         .responsive-table .col-1 {
-            flex-basis: 25%;
+            flex-basis: 20%;
+            @apply px-2;
         }
         .responsive-table .col-2 {
-            flex-basis: 25%;
+            flex-basis: 30%;
+            @apply px-2;
         }
         .responsive-table .col-3 {
             flex-basis: 25%;
+            @apply px-2;
         }
         .responsive-table .col-4 {
             flex-basis: 25%;
+            @apply px-2;
         }
         @media all and (max-width: 600px) {
             .responsive-table .table-header {
@@ -40,14 +44,17 @@
             }
             .responsive-table .table-row {
                 display: block;
-                @apply border h-[146px] leading-none rounded-md mb-2;
+                @apply border min-h-[146px] rounded-md mb-2 pb-4;
             }
             .responsive-table .col {
-                flex-basis: 100%;
+                flex-basis: 50%;
             }
             .responsive-table .col {
                 display: flex;
                @apply mt-4;
+            }
+            .responsive-table .col span{
+                @apply w-[50%];
             }
             .responsive-table .col:before {
                 content: attr(data-label);
@@ -55,6 +62,7 @@
                 font-size: 16px;
                 @apply text-[#363636] text-left font-medium;
             }
+
         }
 
     </style>
@@ -70,27 +78,27 @@
             </li>
             <li class="table-row">
                 <div class="col col-1" data-label="#">42235</div>
-                <div class="col col-2" data-label="Ngày tạo">John Doe</div>
-                <div class="col col-3 font-semibold" data-label="Available (vnđ)">$350</div>
-                <div class="col col-4 font-semibold" data-label="Pending (vnđ)">Pending</div>
+                <div class="col col-2" data-label="Ngày tạo"><span>John Doe John Doe John Doe John Doe John Doe John Does John Does John Does John Does John Does</span></div>
+                <div class="col col-3 font-semibold" data-label="Available (vnđ)"><span>$350</span></div>
+                <div class="col col-4 font-semibold" data-label="Pending (vnđ)"><span>Pending</span></div>
             </li>
             <li class="table-row">
                 <div class="col col-1" data-label="#">42442</div>
-                <div class="col col-2" data-label="Ngày tạo">Jennifer Smith</div>
-                <div class="col col-3 font-semibold" data-label="Available (vnđ)">$220</div>
-                <div class="col col-4 font-semibold" data-label="Pending (vnđ)">Pending</div>
+                <div class="col col-2" data-label="Ngày tạo"><span>Jennifer Smith</span></div>
+                <div class="col col-3 font-semibold" data-label="Available (vnđ)"><span>$220</span></div>
+                <div class="col col-4 font-semibold" data-label="Pending (vnđ)"><span>Pending</span></div>
             </li>
             <li class="table-row">
                 <div class="col col-1" data-label="#">42257</div>
                 <div class="col col-2" data-label="Ngày tạo">John Smith</div>
-                <div class="col col-3 font-semibold" data-label="Available (vnđ)">$341</div>
-                <div class="col col-4 font-semibold" data-label="Pending (vnđ)">Pending</div>
+                <div class="col col-3 font-semibold" data-label="Available (vnđ)"><span>$220</span></div>
+                <div class="col col-4 font-semibold" data-label="Pending (vnđ)"><span>Pending</span></div>
             </li>
             <li class="table-row">
                 <div class="col col-1" data-label="#">42311</div>
-                <div class="col col-2" data-label="Ngày tạo">John Carpenter</div>
-                <div class="col col-3 font-semibold" data-label="Available (vnđ)">$115</div>
-                <div class="col col-4 font-semibold" data-label="Pending (vnđ)">Pending</div>
+                <div class="col col-2" data-label="Ngày tạo"><span>John Carpenter</span></div>
+                <div class="col col-3 font-semibold" data-label="Available (vnđ)"><span>$220</span></div>
+                <div class="col col-4 font-semibold" data-label="Pending (vnđ)"><span>Pending</span></div>
             </li>
         </ul>
     </div>
